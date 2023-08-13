@@ -53,7 +53,7 @@ const Navbar = ({ themeToggle }) => {
             BreakLog
           </a>
         </div>
-
+ 
 
         <div className="collapse navbar-collapse order-4" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto">
