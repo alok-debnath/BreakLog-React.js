@@ -2,75 +2,56 @@ import React from 'react';
 
 const Navbar = ({ themeToggle }) => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container-fluid">
-        <button
-          className="navbar-toggler order-3"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="justify-content-start order-1">
-          <div className="dropdown">
-            <button
-              className="btn"
-              type="button"
-              id="profileDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <p className='mb-0'>User name</p>
-            </button>
-            <ul className="dropdown-menu" aria-labelledby="profileDropdown">
-              <li>
-                <a className="dropdown-item" href="#">
-                  Profile
-                </a>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <a className="navbar-brand me-2" href="https://mdbgo.com/">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
+              height={16}
+              alt="MDB Logo"
+              loading="lazy"
+              style={{ marginTop: "-1px" }}
+            />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarButtonsExample"
+            aria-controls="navbarButtonsExample"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon" />
+          </button>
+          <div className="collapse navbar-collapse" id="navbarButtonsExample">
+            <ul className="navbar-nav me-auto mt-3 mt-lg-0 mb-lg-0 align-items-center">
+              <li className="nav-item mb-3 mb-lg-0 ms-lg-3">
+                <button type="button" className="btn btn-primary">
+                  Home
+                </button>
               </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Settings
-                </a>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <a className="dropdown-item" href="#">
-                  Logout
-                </a>
+              <li className="nav-item mb-3 mb-lg-0 ms-lg-3">
+                <button type="button" className="btn btn-primary">
+                  History
+                </button>
               </li>
             </ul>
+            <div className="d-flex align-items-center">
+              <button type="button" className="btn btn-primary me-3">
+                Sign up for free
+              </button>
+              <button type="button" className="btn btn-dark px-3">
+                Profile
+              </button>
+            </div>
           </div>
         </div>
-        <div className='mx-auto order-2 d-flex justify-content-center'>
-          <a className="navbar-brand text-center fw-bold" href="#">
-            BreakLog
-          </a>
-        </div>
- 
+      </nav>
 
-        <div className="collapse navbar-collapse order-4" id="navbarSupportedContent">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link btn btn-light active btn-lg w-100 mb-2" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link btn btn-light btn-lg w-100" href="#">
-                Link
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+    </>
+
   );
 };
 

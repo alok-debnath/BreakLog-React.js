@@ -31,7 +31,7 @@ const Index = () => {
           themeToggle={themeToggle}
         />
         <div>
-          <Button onClick={handleOpenModal}>Open Modal</Button>
+          {/* <Button onClick={handleOpenModal}>Open Modal</Button> */}
           <MyModal show={showModal} handleClose={handleCloseModal} />
         </div>
       </div>
