@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Navbar from '../../Includes/Layouts/Navbar'
 import MyModal from '../../Includes/Layouts/MyModal';
-import Button from 'react-bootstrap/Button';
+import SettingsModal from '../../Includes/Layouts/SettingsModal';
+import NavbarBottom from '../../Includes/Layouts/NavbarBottom';
 
 const Index = () => {
   const [themeMode, setThemeMode] = useState("");
@@ -14,25 +15,19 @@ const Index = () => {
     }
   };
 
-  const [showModal, setShowModal] = useState(false);
-
-  const handleOpenModal = () => {
-    setShowModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setShowModal(false);
-  };
 
   return (
     <>
-      <div data-bs-theme={themeMode}>
-        <Navbar
-          themeToggle={themeToggle}
-        />
+      <div data-theme="night">
         <div>
-          {/* <Button onClick={handleOpenModal}>Open Modal</Button> */}
-          <MyModal show={showModal} handleClose={handleCloseModal} />
+          <Navbar
+            themeToggle={themeToggle}
+          />
+        </div>
+        {/* <MyModal /> */}
+        <SettingsModal />
+        <div>
+          <NavbarBottom />
         </div>
       </div>
     </>

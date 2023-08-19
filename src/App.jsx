@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // import "../bootstrap.config";
 import "./App.scss";
-import * as bootstrap from 'bootstrap'
 
 
 import Index from './Components/Pages/Index';
