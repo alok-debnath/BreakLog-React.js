@@ -37,6 +37,7 @@ const Navbar = ({ themeToggle }) => {
           </div>
         </div>
       </div>
+      {/* <progress className="progress"></progress> */}
     </>
 
   );
