@@ -36,10 +36,7 @@ const NavbarBottom = () => {
                                 text="Enter log"
                             />
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
         </>

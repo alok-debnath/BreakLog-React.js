@@ -3,7 +3,7 @@ import React from 'react';
 const Navbar = ({ themeToggle }) => {
   return (
     <>
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 fixed z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -16,7 +16,7 @@ const Navbar = ({ themeToggle }) => {
             </ul>
           </div>
           <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">BreakLog v4</a>
+            <a className="btn btn-ghost normal-case text-xl">BreakLog.v4</a>
           </div>
         </div>
         <div className="navbar-end gap-2">
@@ -25,12 +25,12 @@ const Navbar = ({ themeToggle }) => {
               <p className="font-bold">User Name</p>
             </label>
             <ul tabIndex={0} className="menu menu-lg dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-              {/* <li>
+              <li>
                 <a className="justify-between">
                   Profile
                   <span className="badge">New</span>
                 </a>
-              </li> */}
+              </li>
               <li onClick={() => window.setting_modal.showModal()}><a>Settings</a></li>
               <li><a>Logout</a></li>
             </ul>
