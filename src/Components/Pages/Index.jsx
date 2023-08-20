@@ -1,31 +1,39 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '../../Includes/Layouts/Navbar'
 import MyModal from '../../Includes/Layouts/MyModal';
 import SettingsModal from '../../Includes/Layouts/SettingsModal';
 import NavbarBottom from '../../Includes/Layouts/NavbarBottom';
 
 const Index = () => {
-  const [themeMode, setThemeMode] = useState("");
+  const [themeMode, setThemeMode] = useState("night");
 
-  const themeToggle = async () => {
-    if (themeMode === "") {
-      setThemeMode("dark");
-    } else {
-      setThemeMode("");
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('thememode');
+
+    if (savedTheme) {
+      setThemeMode(savedTheme);
     }
+  }, []);
+
+  const themeToggle = (themeName) => {
+    setThemeMode(themeName);
+    localStorage.setItem('thememode', themeName);
   };
 
 
   return (
     <>
-      <div data-theme="night">
+      <div data-theme={themeMode}>
         <div>
           <Navbar
             themeToggle={themeToggle}
           />
         </div>
         {/* <MyModal /> */}
-        <SettingsModal />
+        <SettingsModal
+          themeToggle={themeToggle}
+          themeMode={themeMode}
+        />
         <div>
           <NavbarBottom />
         </div>

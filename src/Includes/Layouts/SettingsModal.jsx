@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import ToggleButtonText from '../../Components/UI/ToggleButtonText';
+import SelectboxText from '../../Components/UI/SelectboxText';
+import { ThemeName } from '../../Constants/Constant';
 
-const SettingsModal = ({ }) => {
+const SettingsModal = ({ themeToggle, themeMode }) => {
+    const handleThemeChange = (event) => {
+        themeToggle(event.target.value);
+    };
+
     const [isChecked, setIsChecked] = useState(false);
-
-    const handleToggle = () => {
-        setIsChecked(!isChecked);
+    const handleToggleChange = (event) => {
+        setIsChecked(event.target.checked);
     };
 
     return (
@@ -18,8 +23,15 @@ const SettingsModal = ({ }) => {
 
                     <ToggleButtonText
                         text="BreakLog mode"
-                        checked={false}
+                        checked={isChecked}
                         secondaryText="(LOP will be miscalculated once log is saved using this mode)"
+                        onChange={handleToggleChange}
+                    />
+                    <SelectboxText
+                        text="Theme"
+                        OptionValue={ThemeName}
+                        checked={themeMode}
+                        onChange={handleThemeChange}
                     />
 
                     <div className="modal-action">
