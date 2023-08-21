@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Navbar = ({ themeToggle }) => {
+const Navbar = ({ breaklogMode }) => {
   return (
     <>
       <div className="navbar bg-base-100 fixed z-10">
@@ -16,7 +16,13 @@ const Navbar = ({ themeToggle }) => {
             </ul>
           </div>
           <div className="flex-1">
-            <a className="btn btn-ghost normal-case text-xl">BreakLog.v4</a>
+            <a className="btn btn-ghost normal-case text-xl gap-1">
+              {breaklogMode ? (
+                <>BreakLog.v4</>
+              ) : (
+                <><div><span className='line-through'>Break</span>DayLog.v4</div></>
+              )}
+            </a>
           </div>
         </div>
         <div className="navbar-end gap-2">

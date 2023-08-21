@@ -4,9 +4,11 @@ import MyModal from '../../Includes/Layouts/MyModal';
 import SettingsModal from '../../Includes/Layouts/SettingsModal';
 import NavbarBottom from '../../Includes/Layouts/NavbarBottom';
 import Button from '../UI/Button';
+import ToasrAlert from '../UI/ToasrAlert';
 
 const Index = () => {
   const [themeMode, setThemeMode] = useState("night");
+  const [breaklogMode, setBreaklogMode] = useState();
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('thememode');
@@ -28,6 +30,8 @@ const Index = () => {
         <div>
           <Navbar
             themeToggle={themeToggle}
+
+            breaklogMode={breaklogMode}
           />
         </div>
         <div className="hero min-h-screen bg-base-200">
@@ -69,10 +73,15 @@ const Index = () => {
             </div>
           </div>
         </div>
+        <ToasrAlert
+          text="Warning: Network issue encountered!"
+        />
         {/* <MyModal /> */}
         <SettingsModal
           themeToggle={themeToggle}
           themeMode={themeMode}
+
+          setBreaklogMode={setBreaklogMode}
         />
         <div>
           <NavbarBottom />

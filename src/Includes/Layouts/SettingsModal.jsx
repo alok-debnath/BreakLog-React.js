@@ -3,7 +3,7 @@ import ToggleButtonText from '../../Components/UI/ToggleButtonText';
 import SelectboxText from '../../Components/UI/SelectboxText';
 import { ThemeName } from '../../Constants/Constant';
 
-const SettingsModal = ({ themeToggle, themeMode }) => {
+const SettingsModal = ({ themeToggle, themeMode, setBreaklogMode }) => {
     const handleThemeChange = (event) => {
         themeToggle(event.target.value);
     };
@@ -11,6 +11,7 @@ const SettingsModal = ({ themeToggle, themeMode }) => {
     const [isChecked, setIsChecked] = useState(false);
     const handleToggleChange = (event) => {
         setIsChecked(event.target.checked);
+        setBreaklogMode(isChecked);
     };
 
     return (
