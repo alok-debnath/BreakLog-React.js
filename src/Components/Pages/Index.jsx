@@ -7,8 +7,24 @@ import Button from '../UI/Button';
 import ToasrAlert from '../UI/ToasrAlert';
 
 const Index = () => {
-  const [themeMode, setThemeMode] = useState("night");
   const [breaklogMode, setBreaklogMode] = useState();
+
+  // // // For toast alert // // //
+  const [showToast, setShowToast] = useState("");
+
+  useEffect(() => {
+    if (showToast) {
+      const timeoutId = setTimeout(() => {
+        setShowToast();
+      }, 5000);
+
+      return () => clearTimeout(timeoutId);
+    }
+  }, [showToast]);
+  // // // END // // //
+
+  // // // For theme // // //
+  const [themeMode, setThemeMode] = useState("night");
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('thememode');
@@ -22,7 +38,7 @@ const Index = () => {
     setThemeMode(themeName);
     localStorage.setItem('thememode', themeName);
   };
-
+  // // // END // // //
 
   return (
     <>
@@ -30,7 +46,6 @@ const Index = () => {
         <div>
           <Navbar
             themeToggle={themeToggle}
-
             breaklogMode={breaklogMode}
           />
         </div>
@@ -73,10 +88,9 @@ const Index = () => {
             </div>
           </div>
         </div>
-        <ToasrAlert
-          text="Warning: Network issue encountered!"
-        />
-        {/* <MyModal /> */}
+        {showToast && (
+          <ToasrAlert text="Warning: Network issue encountered!" />
+        )}
         <SettingsModal
           themeToggle={themeToggle}
           themeMode={themeMode}

@@ -8,7 +8,7 @@ const SettingsModal = ({ themeToggle, themeMode, setBreaklogMode }) => {
         themeToggle(event.target.value);
     };
 
-    const [isChecked, setIsChecked] = useState(false);
+    const [isChecked, setIsChecked] = useState(true);
     const handleToggleChange = (event) => {
         setIsChecked(event.target.checked);
         setBreaklogMode(isChecked);

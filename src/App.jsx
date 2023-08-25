@@ -5,12 +5,14 @@ import "./App.scss";
 
 
 import Index from './Components/Pages/Index';
+import Login from './Components/Pages/Login';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} exact />
+        <Route path="/login" element={<Login />} exact />
       </Routes>
     </BrowserRouter>
   );
